@@ -1,3 +1,5 @@
-# carroattrezzipiacenzamg.it
+# carroattrezzibari.it
 
-Sito statico Next.js per servizio di carroattrezzi a Piacenza.
+Sito indipendente: Bari. Identità bari signature.
+
+Next.js static export, pubblicato tramite GitHub Actions su Pages.

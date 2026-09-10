@@ -1,6 +1,6 @@
 export const site = {
   domain: 'carroattrezzibari.it',
-  template: 'bari-nordest',
+  template: 'bari-signature',
   description: 'Carroattrezzi a Bari e soccorso stradale 24 ore: recupero auto, traino, assistenza moto e trasporto veicoli in città e provincia.',
   tel: 'mailto:assistenza@carroattrezzibari.it',
   city: 'Bari',
@@ -17,28 +17,76 @@ const serviceText = (service: string) => ({
 })
 
 export const services = [
-  { title: 'Soccorso stradale 24 ore', slug: 'soccorso-stradale-24-ore', ...serviceText('soccorso stradale 24 ore') },
-  { title: 'Traino auto', slug: 'traino-auto', ...serviceText('traino auto') },
-  { title: 'Recupero auto incidentata', slug: 'recupero-auto-incidentata', ...serviceText('recupero auto incidentata') },
-  { title: 'Carroattrezzi moto', slug: 'carroattrezzi-moto', ...serviceText('carroattrezzi per moto') },
-  { title: 'Assistenza batteria scarica', slug: 'assistenza-batteria-scarica', ...serviceText('assistenza per batteria scarica') },
-  { title: 'Recupero auto in panne', slug: 'recupero-auto-in-panne', ...serviceText('recupero auto in panne') },
-  { title: 'Soccorso in autostrada', slug: 'soccorso-in-autostrada', ...serviceText('soccorso in autostrada') },
+  { title: 'Soccorso stradale 24 ore', slug: 'soccorso-stradale-24-ore', ...serviceText('soccorso stradale 24 ore'), text: "Un guasto non sceglie il momento. Comunica dove sei e cosa è successo per verificare la disponibilità di intervento." },
+  { title: 'Traino auto', slug: 'traino-auto', ...serviceText('traino auto'), text: "Trasporto del veicolo non marciante verso l’officina o la destinazione concordata, con modalità di carico adeguate." },
+  { title: 'Recupero auto incidentata', slug: 'recupero-auto-incidentata', ...serviceText('recupero auto incidentata'), text: "Valutazione di danni, ruote e accessi per organizzare con attenzione il recupero dopo un sinistro." },
+  { title: 'Carroattrezzi moto', slug: 'carroattrezzi-moto', ...serviceText('carroattrezzi per moto'), text: "Recupero e trasporto di moto e scooter con fissaggi adatti alle due ruote e alle condizioni del mezzo." },
+  { title: 'Assistenza batteria scarica', slug: 'assistenza-batteria-scarica', ...serviceText('assistenza per batteria scarica'), text: "Problemi di avviamento? Descrivi i segnali del veicolo per valutare l’assistenza o il trasferimento in officina." },
+  { title: 'Recupero auto in panne', slug: 'recupero-auto-in-panne', ...serviceText('recupero auto in panne'), text: "Avarie, spie o un motore che non parte: organizziamo il recupero senza forzare il veicolo a proseguire." },
+  { title: 'Soccorso in autostrada', slug: 'soccorso-in-autostrada', ...serviceText('soccorso in autostrada'), text: "Comunica tratta, direzione e riferimento chilometrico. Il soccorso sulla tratta è subordinato alle autorizzazioni necessarie." },
 ] as const
 
 export const zones = [
-  { title: 'Carroattrezzi a Bari', name: 'Bari', slug: 'bari' },
-  { title: 'Carroattrezzi a Tavagnacco', name: 'Tavagnacco', slug: 'tavagnacco' },
-  { title: 'Carroattrezzi a Pasian di Prato', name: 'Pasian di Prato', slug: 'pasian-di-prato' },
-  { title: 'Carroattrezzi a Povoletto', name: 'Povoletto', slug: 'povoletto' },
-  { title: 'Carroattrezzi a Campoformido', name: 'Campoformido', slug: 'campoformido' },
-  { title: 'Carroattrezzi a Martignacco', name: 'Martignacco', slug: 'martignacco' },
-  { title: 'Carroattrezzi a Pozzuolo del Friuli', name: 'Pozzuolo del Friuli', slug: 'pozzuolo-del-friuli' },
-  { title: 'Carroattrezzi a Remanzacco', name: 'Remanzacco', slug: 'remanzacco' },
-  { title: 'Carroattrezzi a Manzano', name: 'Manzano', slug: 'manzano' },
-  { title: 'Carroattrezzi a Cividale del Friuli', name: 'Cividale del Friuli', slug: 'cividale-del-friuli' },
-  { title: 'Carroattrezzi a Codroipo', name: 'Codroipo', slug: 'codroipo' },
-  { title: 'Carroattrezzi a Palmanova', name: 'Palmanova', slug: 'palmanova' },
+  {
+    "title": "Carroattrezzi a Bari",
+    "name": "Bari",
+    "slug": "bari"
+  },
+  {
+    "title": "Carroattrezzi a Modugno",
+    "name": "Modugno",
+    "slug": "modugno"
+  },
+  {
+    "title": "Carroattrezzi a Bitonto",
+    "name": "Bitonto",
+    "slug": "bitonto"
+  },
+  {
+    "title": "Carroattrezzi a Triggiano",
+    "name": "Triggiano",
+    "slug": "triggiano"
+  },
+  {
+    "title": "Carroattrezzi a Capurso",
+    "name": "Capurso",
+    "slug": "capurso"
+  },
+  {
+    "title": "Carroattrezzi a Valenzano",
+    "name": "Valenzano",
+    "slug": "valenzano"
+  },
+  {
+    "title": "Carroattrezzi a Adelfia",
+    "name": "Adelfia",
+    "slug": "adelfia"
+  },
+  {
+    "title": "Carroattrezzi a Noicattaro",
+    "name": "Noicattaro",
+    "slug": "noicattaro"
+  },
+  {
+    "title": "Carroattrezzi a Mola di Bari",
+    "name": "Mola di Bari",
+    "slug": "mola-di-bari"
+  },
+  {
+    "title": "Carroattrezzi a Giovinazzo",
+    "name": "Giovinazzo",
+    "slug": "giovinazzo"
+  },
+  {
+    "title": "Carroattrezzi a Molfetta",
+    "name": "Molfetta",
+    "slug": "molfetta"
+  },
+  {
+    "title": "Carroattrezzi a Bitritto",
+    "name": "Bitritto",
+    "slug": "bitritto"
+  }
 ] as const
 
 export const networkSites = [
