@@ -5,7 +5,6 @@ export const site = {
   tel: 'mailto:assistenza@carroattrezzibari.it',
   city: 'Bari',
   name: 'Carroattrezzi Bari',
-  address: 'Bari e provincia',
   title: 'Carroattrezzi Bari 24H | Soccorso stradale',
   phone: 'Richiedi assistenza',
   email: 'assistenza@carroattrezzibari.it',
