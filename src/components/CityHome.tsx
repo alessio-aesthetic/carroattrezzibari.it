@@ -1,6 +1,58 @@
 import { OriginalPhoto } from './OriginalPhoto'
 import { services } from '@/data/site'
-import { Shell, CTA, Marquee, Process, Coverage, FAQ, Footer, StructuredData } from './BrandShell'
+import { Shell, CTA, Process, Coverage, FAQ, Footer, StructuredData } from './BrandShell'
 import { VehicleSelector } from './PremiumMotion'
 
-export default function CityHome() { return <Shell><main id="contenuto"><section className="hero bari-hero wrap"><div className="hero-copy"><span className="eyebrow">CIAO BARI. CI SIAMO.</span><h1>Riparti<br />con il <span>piede<br />giusto.</span></h1><p className="lead">Auto ferma? Mettiamo ordine all’imprevisto. Soccorso stradale e trasporto veicoli a Bari e nei comuni vicini.</p><div className="hero-actions"><CTA /><a className="text-link" href="#servizi">Cosa possiamo fare ↗</a></div></div><div className="bari-visual"><div className="hero-photo"><OriginalPhoto name="hero" alt="Tecnico durante l’assistenza a un veicolo" priority sizes="(max-width: 680px) 88vw, 45vw" /></div><div className="bari-sticker"><span>BARI</span><strong>Si riparte.</strong><span>UN PASSO ALLA VOLTA</span></div><div className="bari-caption"><span>Un imprevisto?</span><strong>Hai un riferimento.</strong></div></div></section><Marquee words={['Bari', 'Una mano concreta', 'Soccorso stradale', 'Auto · Moto', 'Ci prendiamo cura del viaggio']} /><section id="servizi" className="section wrap"><div className="section-top" data-reveal><div><span className="eyebrow">Piccoli guasti. Grandi imprevisti.</span><h2>Per ogni stop,<br />un nuovo <span className="accent">via.</span></h2></div><p>Dal problema alla batteria al trasporto in officina: trova il supporto che serve al tuo veicolo.</p></div><div className="bari-services">{services.map((s,i) => <a href={`/servizi/${s.slug}/`} className={`service-item bari-card bari-card-${i}`} key={s.slug} data-reveal><div className="bari-card-top"><span className="num">0{i+1}</span><span className="service-arrow" aria-hidden="true">↗</span></div><h3>{s.title}</h3><p>{s.text}</p>{i<2&&<OriginalPhoto name={['card-soccorso', 'card-traino'][i]} alt={s.title} sizes="(max-width: 680px) 88vw, 45vw" />}</a>)}</div></section><section className="bari-blue section"><div className="wrap bari-promise"><h2 data-reveal>Il problema<br />è già abbastanza.<br /><span>Facciamola semplice.</span></h2><div data-reveal><p>Spiegaci cosa è successo, condividi la posizione e scegli dove portare il veicolo. Il resto lo organizziamo insieme.</p><CTA /></div></div></section><section className="section wrap"><VehicleSelector /></section><Process /><Coverage /><FAQ /></main><Footer /><StructuredData /></Shell> }
+export default function CityHome() {
+  return (
+    <Shell>
+      <main id="contenuto">
+        <section className="bari-dispatch" aria-labelledby="bari-title">
+          <div className="wrap dispatch-grid">
+            <div className="dispatch-copy">
+              <span className="dispatch-status">Soccorso stradale 24 ore</span>
+              <h1 id="bari-title">Carroattrezzi<br />a <em>Bari.</em></h1>
+              <p>Auto in panne, moto ferma o veicolo incidentato? Chiamaci per organizzare il recupero a Bari e nei comuni vicini.</p>
+              <div className="dispatch-actions">
+                <CTA label="Chiama 080 548 4383" />
+                <a href="#servizi">Vedi i servizi <span aria-hidden="true">↓</span></a>
+              </div>
+            </div>
+            <figure className="dispatch-visual">
+              <OriginalPhoto name="hero" alt="Tecnico del soccorso stradale al lavoro a Bari" priority sizes="(max-width: 760px) 92vw, 48vw" />
+              <figcaption><span aria-hidden="true">↗</span> Recupero e trasporto veicoli<br />Bari e provincia</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section id="servizi" className="section wrap dispatch-services">
+          <div className="section-top" data-reveal>
+            <h2>Soccorso stradale<br />a Bari</h2>
+            <p>Dal guasto al trasporto in officina. Scegli il servizio per sapere come funziona e quali informazioni comunicare al telefono.</p>
+          </div>
+          <div className="dispatch-cards">
+            {services.map((service, index) => (
+              <a key={service.slug} href={`/servizi/${service.slug}/`} className="dispatch-card" data-reveal>
+                {index < 2 && (
+                  <div className="dispatch-card-photo">
+                    <OriginalPhoto name={index === 0 ? 'card-soccorso' : 'card-traino'} alt="" sizes="(max-width: 760px) 92vw, 46vw" />
+                  </div>
+                )}
+                <div className="dispatch-card-body">
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                  <span className="dispatch-arrow" aria-hidden="true">↗</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+        <section className="section wrap"><VehicleSelector /></section>
+        <Process />
+        <Coverage />
+        <FAQ />
+      </main>
+      <Footer />
+      <StructuredData />
+    </Shell>
+  )
+}
