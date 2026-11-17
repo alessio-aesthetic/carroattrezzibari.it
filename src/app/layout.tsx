@@ -3,9 +3,10 @@ import { Outfit, DM_Sans } from 'next/font/google'
 import { site } from '@/data/site'
 import '@/styles/tailwind.css'
 import '@/styles/premium.css'
+import '@/styles/bari-dispatch.css'
 const display = Outfit({ subsets: ['latin'], display: 'swap', variable: '--font-display', weight: ['400','500','600','700'] })
 const body = DM_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-body' })
-export const viewport: Viewport = { themeColor: '#164bfa' }
+export const viewport: Viewport = { themeColor: '#112822' }
 export const metadata: Metadata = {
  metadataBase: new URL(`https://${site.domain}`),
  title: { default: site.title, template: `%s | ${site.name}` }, description: site.description,
