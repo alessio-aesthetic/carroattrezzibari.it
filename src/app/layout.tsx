@@ -1,11 +1,8 @@
 import { type Metadata, type Viewport } from 'next'
-import { Outfit, DM_Sans } from 'next/font/google'
 import { site } from '@/data/site'
 import '@/styles/tailwind.css'
 import '@/styles/premium.css'
 import '@/styles/bari-dispatch.css'
-const display = Outfit({ subsets: ['latin'], display: 'swap', variable: '--font-display', weight: ['400','500','600','700'] })
-const body = DM_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-body' })
 export const viewport: Viewport = { themeColor: '#112822' }
 export const metadata: Metadata = {
  metadataBase: new URL(`https://${site.domain}`),
@@ -14,5 +11,5 @@ export const metadata: Metadata = {
  openGraph: { title: site.title, description: site.description, url: `https://${site.domain}/`, siteName: site.name, locale: 'it_IT', type: 'website' },
  robots: { index: true, follow: true },
 }
-export default function RootLayout({ children }: { children: React.ReactNode }) { return <html lang="it" className={`${display.variable} ${body.variable}`}><body>{children}<script defer src="/privacy-notice.js" />
+export default function RootLayout({ children }: { children: React.ReactNode }) { return <html lang="it"><body style={{ ['--font-display']: '"Trebuchet MS", system-ui, sans-serif', ['--font-body']: 'system-ui, sans-serif' } as React.CSSProperties}>{children}<script defer src="/privacy-notice.js" />
       </body></html> }
