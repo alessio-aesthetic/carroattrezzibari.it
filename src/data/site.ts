@@ -2,11 +2,14 @@ export const site = {
   domain: 'carroattrezzibari.it',
   template: 'bari-signature',
   description: 'Carroattrezzi a Bari e soccorso stradale 24 ore: recupero auto, traino, assistenza moto e trasporto veicoli in città e provincia.',
-  tel: 'mailto:assistenza@carroattrezzibari.it',
+  tel: '0805484383',
   city: 'Bari',
   name: 'Carroattrezzi Bari',
-  title: 'Carroattrezzi Bari 24H | Soccorso stradale',
-  phone: 'Richiedi assistenza',
+  title: 'Carroattrezzi a Bari | Soccorso stradale 24 ore',
+  phone: '080 548 4383',
+  street: 'Via Conte Girolamo Giusso, 4B',
+  postalCode: '70125',
+  province: 'BA',
   email: 'assistenza@carroattrezzibari.it',
 } as const
 
