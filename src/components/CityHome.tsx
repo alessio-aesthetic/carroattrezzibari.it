@@ -1,5 +1,5 @@
 import { OriginalPhoto } from './OriginalPhoto'
-import { services } from '@/data/site'
+import { services, site } from '@/data/site'
 import { Shell, CTA, Process, Coverage, FAQ, Footer, StructuredData } from './BrandShell'
 import { VehicleSelector } from './PremiumMotion'
 
@@ -14,7 +14,7 @@ export default function CityHome() {
               <h1 id="bari-title">Carroattrezzi<br />a <em>Bari.</em></h1>
               <p>Auto in panne, moto ferma o veicolo incidentato? Chiamaci per organizzare il recupero a Bari e nei comuni vicini.</p>
               <div className="dispatch-actions">
-                <CTA label="Chiama 080 548 4383" />
+                <CTA label={`Chiama ${site.phone}`} />
                 <a href="#servizi">Vedi i servizi <span aria-hidden="true">↓</span></a>
               </div>
             </div>
